@@ -3,70 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Slot Suite</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap">
+    <title>Slot Machine Debug</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="casino-container">
-        <header class="casino-header">
-            <h1>🎰 ULTIMATE SLOT SUITE 🎰</h1>
-            <div class="user-panel">
-                <div class="balance-box">
-                    <span>CREDITS:</span>
-                    <span id="balance">10,000</span>
-                </div>
-                <div class="jackpot-box">
-                    <span>PROGRESSIVE JACKPOT:</span>
-                    <span id="jackpot-amount">1,234,567</span>
-                </div>
-            </div>
-        </header>
-
-        <main class="game-container">
-            <div class="game-selector">
-                <button class="game-btn active" data-game="classic3">Classic 3-Reel</button>
-                <button class="game-btn" data-game="video5">5-Reel Video</button>
-                <button class="game-btn" data-game="megaways">Megaways™</button>
-                <button class="game-btn" data-game="progressive">Jackpot Quest</button>
-            </div>
-
-            <!-- Game displays will be injected here -->
-            <div class="game-display" id="game-display"></div>
-
-            <div class="control-panel">
-                <div class="bet-controls">
-                    <button id="bet-down" class="bet-btn">-</button>
-                    <div class="bet-display">
-                        <span>BET:</span>
-                        <span id="current-bet">100</span>
-                    </div>
-                    <button id="bet-up" class="bet-btn">+</button>
-                    <button id="max-bet" class="action-btn">MAX BET</button>
-                </div>
-
-                <div class="spin-controls">
-                    <button id="spin-btn" class="spin-btn">SPIN</button>
-                    <button id="auto-spin" class="action-btn">AUTO (5)</button>
-                </div>
-            </div>
-        </main>
-
-        <div class="paytable-modal" id="paytable-modal">
-            <div class="modal-content">
-                <h2>PAYTABLE</h2>
-                <div id="paytable-content"></div>
-                <button class="close-modal">CLOSE</button>
-            </div>
+    <div class="debug-test">
+        <h1>Debug Test</h1>
+        <p>If you see this, HTML is loading.</p>
+        <div style="color: red; font-weight: bold;" id="css-test">
+            If this text is red, CSS is loading.
         </div>
-
-        <div class="win-animation" id="win-animation"></div>
     </div>
-
-    <audio id="spin-sound" src="assets/sounds/spin.mp3" preload="auto"></audio>
-    <audio id="win-sound" src="assets/sounds/win.mp3" preload="auto"></audio>
-    <audio id="jackpot-sound" src="assets/sounds/jackpot.mp3" preload="auto"></audio>
-
-    <script src="script.js" type="module"></script>
+    
+    <script>
+        document.getElementById('css-test').innerHTML += 
+            '<br><span style="color: green;">If this is green, JavaScript is working.</span>';
+        
+        console.log("JavaScript console is working");
+    </script>
 </body>
 </html>
