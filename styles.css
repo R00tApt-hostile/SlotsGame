@@ -1,499 +1,604 @@
+/* Reset and Base Styles */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e74c3c;
-    --accent-color: #f1c40f;
-    --dark-accent: #d35400;
-    --light-text: #ecf0f1;
-    --dark-text: #2c3e50;
-    --success-color: #2ecc71;
-    --info-color: #3498db;
-    --jackpot-gold: #ffd700;
+  --primary-color: #2c3e50;
+  --secondary-color: #e74c3c;
+  --accent-color: #f1c40f;
+  --dark-accent: #d35400;
+  --light-text: #ecf0f1;
+  --dark-text: #2c3e50;
+  --success-color: #2ecc71;
+  --info-color: #3498db;
+  --jackpot-gold: #ffd700;
+  --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1a2a3a, #0d1a26);
-    color: var(--light-text);
-    min-height: 100vh;
-    overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #1a2a3a, #0d1a26);
+  color: var(--light-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
+/* Main Container */
 .casino-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
 }
 
+/* Header Styles */
 .casino-header {
-    background: linear-gradient(to right, var(--secondary-color), var(--dark-accent));
-    padding: 15px 25px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  background: linear-gradient(to right, var(--secondary-color), var(--dark-accent));
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .casino-header h1 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.8rem;
-    color: var(--accent-color);
-    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
-    margin-bottom: 10px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  text-align: center;
+  flex: 1 1 100%;
 }
 
 .user-panel {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .balance-box, .jackpot-box {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 200px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  margin: 5px 0;
 }
 
 .balance-box span:first-child, 
 .jackpot-box span:first-child {
-    font-size: 0.8rem;
-    color: var(--accent-color);
-    margin-bottom: 5px;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin-bottom: 5px;
 }
 
 .balance-box span:last-child {
-    font-size: 1.3rem;
-    color: var(--success-color);
+  font-size: 1.3rem;
+  color: var(--success-color);
 }
 
 .jackpot-box span:last-child {
-    font-size: 1.3rem;
-    color: var(--jackpot-gold);
-    animation: pulse 2s infinite;
+  font-size: 1.3rem;
+  color: var(--jackpot-gold);
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
+/* Game Selector */
 .game-selector {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .game-btn {
-    background: linear-gradient(to bottom, #34495e, #2c3e50);
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.7rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    text-transform: uppercase;
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 3px 5px var(--shadow-color);
+  text-transform: uppercase;
+  border: 2px solid transparent;
 }
 
 .game-btn:hover {
-    background: linear-gradient(to bottom, #3d566e, #34495e);
-    transform: translateY(-2px);
+  background: linear-gradient(to bottom, #3d566e, #34495e);
+  transform: translateY(-2px);
 }
 
 .game-btn.active {
-    background: linear-gradient(to bottom, var(--accent-color), var(--dark-accent));
-    color: var(--dark-text);
-    box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+  background: linear-gradient(to bottom, var(--accent-color), var(--dark-accent));
+  color: var(--dark-text);
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+  border: 2px solid var(--dark-text);
 }
 
+/* Game Display Area */
 .game-display {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    padding: 20px;
-    min-height: 400px;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 400px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Reel styles for different game types */
+/* Reel Styles */
 .reel-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  width: 100%;
+  perspective: 1000px;
 }
 
 .reel {
-    background: linear-gradient(to bottom, #1a2a3a, #0d1a26);
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-    position: relative;
+  background: linear-gradient(to bottom, #1a2a3a, #0d1a26);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 5px 15px var(--shadow-color);
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .reel-symbol {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    margin: 5px 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  margin: 5px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transform: translateZ(10px);
+  transition: transform 0.3s;
 }
 
-/* 3-reel specific */
+/* Game Type Specific Styles */
 .classic3 .reel-container {
-    justify-content: center;
+  justify-content: center;
 }
 
 .classic3 .reel {
-    width: 100px;
+  width: 100px;
 }
 
-/* 5-reel specific */
 .video5 .reel-container {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
 .video5 .reel {
-    width: 80px;
+  width: 80px;
 }
 
-/* Megaways specific */
 .megaways .reel-container {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .megaways .reel {
-    width: 70px;
-    margin: 5px;
+  width: 70px;
+  margin: 5px;
 }
 
-/* Control panel styles */
+/* Control Panel */
 .control-panel {
-    background: linear-gradient(to right, var(--primary-color), #1a2a3a);
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  background: linear-gradient(to right, var(--primary-color), #1a2a3a);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
 }
 
 .bet-controls, .spin-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 300px;
+  justify-content: center;
 }
 
 .bet-display {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 120px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .bet-display span:first-child {
-    font-size: 0.8rem;
-    color: var(--accent-color);
+  font-size: 0.8rem;
+  color: var(--accent-color);
 }
 
 .bet-display span:last-child {
-    font-size: 1.2rem;
-    font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
 }
 
 .bet-btn, .action-btn {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 0 #c0392b;
 }
 
 .bet-btn:hover, .action-btn:hover {
-    background-color: #c0392b;
-    transform: scale(1.05);
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.bet-btn:active, .action-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #c0392b;
 }
 
 .action-btn {
-    width: auto;
-    padding: 0 15px;
-    border-radius: 20px;
-    height: 40px;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+  width: auto;
+  padding: 0 15px;
+  border-radius: 20px;
+  height: 40px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 .spin-btn {
-    background: linear-gradient(to bottom, var(--success-color), #27ae60);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 5px 0 #27ae60;
-    text-transform: uppercase;
+  background: linear-gradient(to bottom, var(--success-color), #27ae60);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 5px 0 #27ae60;
+  text-transform: uppercase;
+  min-width: 150px;
 }
 
 .spin-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 0 #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #27ae60;
 }
 
 .spin-btn:active {
-    transform: translateY(2px);
-    box-shadow: 0 3px 0 #27ae60;
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #27ae60;
 }
 
 .spin-btn:disabled {
-    background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
-    box-shadow: 0 5px 0 #6c7a7d;
-    cursor: not-allowed;
+  background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+  box-shadow: 0 5px 0 #6c7a7d;
+  cursor: not-allowed;
+  transform: none;
 }
 
-/* Modal styles */
+/* Modal Styles */
 .paytable-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
 
 .paytable-modal.active {
-    opacity: 1;
-    pointer-events: all;
+  opacity: 1;
+  pointer-events: all;
 }
 
 .modal-content {
-    background: linear-gradient(to bottom right, #1a2a3a, #0d1a26);
-    border-radius: 10px;
-    padding: 30px;
-    max-width: 800px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 0 30px rgba(241, 196, 15, 0.3);
-    border: 2px solid var(--accent-color);
-    position: relative;
+  background: linear-gradient(to bottom right, #1a2a3a, #0d1a26);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 30px rgba(241, 196, 15, 0.3);
+  border: 2px solid var(--accent-color);
+  position: relative;
 }
 
 .modal-content h2 {
-    color: var(--accent-color);
-    margin-bottom: 20px;
-    text-align: center;
-    font-family: 'Press Start 2P', cursive;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
 }
 
 .close-modal {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 20px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-color 0.3s;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s;
 }
 
 .close-modal:hover {
-    background-color: #c0392b;
+  background-color: #c0392b;
 }
 
-/* Win animation */
+/* Win Animation */
 .win-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s;
 }
 
 .win-animation.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .win-animation h2 {
-    color: var(--jackpot-gold);
-    font-size: 5rem;
-    text-align: center;
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-    animation: zoomInOut 2s infinite;
+  color: var(--jackpot-gold);
+  font-size: 5rem;
+  text-align: center;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  animation: zoomInOut 2s infinite;
+  font-family: 'Press Start 2P', cursive;
 }
 
 @keyframes zoomInOut {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .casino-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .user-panel {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        margin-top: 10px;
-    }
-    
-    .balance-box, .jackpot-box {
-        width: 100%;
-    }
-    
-    .control-panel {
-        flex-direction: column;
-    }
-    
-    .reel-symbol {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-    }
-    
-    .game-btn {
-        padding: 8px 12px;
-        font-size: 0.6rem;
-    }
-    
-    .spin-btn {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-}
-
-/* Progressive game specific styles */
+/* Progressive Game Specific Styles */
 .jackpot-meter {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
 }
 
 .meter-label {
-    font-size: 0.8rem;
-    color: var(--accent-color);
-    margin-bottom: 5px;
-    text-align: center;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 .meter-bar {
-    height: 20px;
-    background-color: #1a2a3a;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
+  height: 20px;
+  background-color: #1a2a3a;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .meter-fill {
-    height: 100%;
-    background: linear-gradient(to right, #f1c40f, #e67e22);
-    width: 0%;
-    transition: width 0.5s;
-    position: relative;
+  height: 100%;
+  background: linear-gradient(to right, #f1c40f, #e67e22);
+  width: 0%;
+  transition: width 0.5s;
+  position: relative;
 }
 
 .meter-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, 
-        rgba(255,255,255,0) 0%, 
-        rgba(255,255,255,0.3) 50%, 
-        rgba(255,255,255,0) 100%);
-    animation: shine 2s infinite;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.3) 50%, 
+    rgba(255,255,255,0) 100%);
+  animation: shine 2s infinite;
 }
 
 @keyframes shine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 @keyframes jackpotBlink {
-    0% { color: var(--jackpot-gold); transform: scale(1); }
-    50% { color: white; transform: scale(1.1); }
-    100% { color: var(--jackpot-gold); transform: scale(1); }
+  0% { color: var(--jackpot-gold); transform: scale(1); }
+  50% { color: white; transform: scale(1.1); }
+  100% { color: var(--jackpot-gold); transform: scale(1); }
 }
 
 .jackpot-info {
-    background-color: rgba(255, 215, 0, 0.1);
-    padding: 10px;
-    border-left: 3px solid var(--jackpot-gold);
-    font-weight: bold;
-    margin: 15px 0;
+  background-color: rgba(255, 215, 0, 0.1);
+  padding: 10px;
+  border-left: 3px solid var(--jackpot-gold);
+  font-weight: bold;
+  margin: 15px 0;
 }
 
 .jackpot-note {
-    font-size: 0.8rem;
-    color: #95a5a6;
-    margin-top: 15px;
-    line-height: 1.5;
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .casino-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .user-panel {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .balance-box, .jackpot-box {
+    width: 100%;
+  }
+  
+  .control-panel {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .bet-controls, .spin-controls {
+    min-width: 100%;
+  }
+  
+  .reel-symbol {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  .game-btn {
+    padding: 8px 12px;
+    font-size: 0.6rem;
+  }
+  
+  .spin-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .win-animation h2 {
+    font-size: 3rem;
+  }
+  
+  .modal-content {
+    padding: 15px;
+  }
+  
+  th, td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .casino-header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .reel-symbol {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .game-btn {
+    padding: 6px 8px;
+    font-size: 0.5rem;
+  }
+  
+  .win-animation h2 {
+    font-size: 2rem;
+  }
 }
