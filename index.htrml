@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slot Machine Debug</title>
+    <title>Working Slot Machine</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fallback in case CSS file doesn't load */
+        body { background-color: #2c3e50; color: white; }
+    </style>
 </head>
 <body>
-    <div class="debug-test">
-        <h1>Debug Test</h1>
-        <p>If you see this, HTML is loading.</p>
-        <div style="color: red; font-weight: bold;" id="css-test">
-            If this text is red, CSS is loading.
+    <div class="slot-machine">
+        <h1>🎰 Slot Machine 🎰</h1>
+        <div class="slots">
+            <div class="slot">🍒</div>
+            <div class="slot">🍋</div>
+            <div class="slot">🍊</div>
         </div>
+        <button id="spin">SPIN</button>
     </div>
-    
+
     <script>
-        document.getElementById('css-test').innerHTML += 
-            '<br><span style="color: green;">If this is green, JavaScript is working.</span>';
-        
-        console.log("JavaScript console is working");
+        document.getElementById('spin').addEventListener('click', function() {
+            const slots = document.querySelectorAll('.slot');
+            slots.forEach(slot => {
+                const fruits = ['🍒', '🍋', '🍊', '🍇', '🍉', '🍎'];
+                const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+                slot.textContent = randomFruit;
+            });
+        });
     </script>
 </body>
 </html>
