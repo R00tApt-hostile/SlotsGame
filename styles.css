@@ -425,3 +425,75 @@ body {
         font-size: 1rem;
     }
 }
+
+/* Progressive game specific styles */
+.jackpot-meter {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.meter-label {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.meter-bar {
+    height: 20px;
+    background-color: #1a2a3a;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(to right, #f1c40f, #e67e22);
+    width: 0%;
+    transition: width 0.5s;
+    position: relative;
+}
+
+.meter-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0) 100%);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes jackpotBlink {
+    0% { color: var(--jackpot-gold); transform: scale(1); }
+    50% { color: white; transform: scale(1.1); }
+    100% { color: var(--jackpot-gold); transform: scale(1); }
+}
+
+.jackpot-info {
+    background-color: rgba(255, 215, 0, 0.1);
+    padding: 10px;
+    border-left: 3px solid var(--jackpot-gold);
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.jackpot-note {
+    font-size: 0.8rem;
+    color: #95a5a6;
+    margin-top: 15px;
+    line-height: 1.5;
+}
