@@ -3,33 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Working Slot Machine</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Fallback in case CSS file doesn't load */
-        body { background-color: #2c3e50; color: white; }
-    </style>
+    <title>Text Adventure Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="slot-machine">
-        <h1>🎰 Slot Machine 🎰</h1>
-        <div class="slots">
-            <div class="slot">🍒</div>
-            <div class="slot">🍋</div>
-            <div class="slot">🍊</div>
-        </div>
-        <button id="spin">SPIN</button>
+    <div class="game-container">
+        <h1>Text Adventure</h1>
+        <div id="story-text">Welcome to the adventure! Click 'Start Game' to begin.</div>
+        <div id="inventory">Inventory: Empty</div>
+        <div id="choices" class="choices-container"></div>
+        <button id="start-btn" class="btn">Start Game</button>
+        <button id="restart-btn" class="btn hidden">Restart Game</button>
     </div>
-
-    <script>
-        document.getElementById('spin').addEventListener('click', function() {
-            const slots = document.querySelectorAll('.slot');
-            slots.forEach(slot => {
-                const fruits = ['🍒', '🍋', '🍊', '🍇', '🍉', '🍎'];
-                const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
-                slot.textContent = randomFruit;
-            });
-        });
-    </script>
+    <script src="game.js"></script>
 </body>
 </html>
